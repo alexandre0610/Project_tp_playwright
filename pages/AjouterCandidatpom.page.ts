@@ -67,6 +67,7 @@ export class AjouterCandidatpom{
         return this.elements.btn_Application_stage();
 
     }
+    // on peut également rajouter cette afin de voir si le bouton candiadtes profile va s'afficher. 
     // getCandProfile(){
     //     return this.elements.btn_Candidate_Profile();
 
