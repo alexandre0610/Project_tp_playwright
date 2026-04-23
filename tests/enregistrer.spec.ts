@@ -26,6 +26,8 @@ test("Ajouter candidat",{tag:"@ajouter"},async({page})=>{
     await expect(Aj.getbtnCandidat()).toBeVisible();
 //     And je click sur le bouton Add
     await Aj.clickAdd();
+
+// // lorsque j'utilise cette methode ca me genere des erreurs lors de l'exécution du test 
 //     And je remplie le champs First Name
 //     await Aj.saisirFirstName("Alex")
 // //     And  je rempise le champs Midlle name
@@ -35,9 +37,8 @@ test("Ajouter candidat",{tag:"@ajouter"},async({page})=>{
 // //     And je remplie le champs Email
 //     await Aj.saisirEmail("test@gmail.com")
 
-// et ici on pouvait egaleùent appeller la methode infoCandidat pour remplir les champs precédent pour rendre notre code plus court
+//  Appeller la methode infoCandidat pour remplir les champs precédent pour rendre notre code plus court
  await Aj.infoCandidat("Alex","Anis","Test","test@gmail.com");
-
 //     And je click sur le bouton Save
     await Aj.clickSave();
 //     Then s'affiche la page  contenant le bouton  Application Stage

@@ -52,7 +52,7 @@ export class AjouterCandidatpom{
     //     await this.elements.email().fill(e);   
     // }
 
-    // Nous pouvons egalement transformer c'est methode en une seule qui va s'appeler : infoCandidat
+    // Nous avons transformer les mathodes saisies les differnts champs  du candidat en une seule fonction apeller: infoCandidat
         async infoCandidat(fname : string , mname : string, lname : string , a_email : string){
         await this.elements.first_name().fill(fname);
         await this.elements.middle_name().fill(mname);
