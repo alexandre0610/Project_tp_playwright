@@ -1,0 +1,1387 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: enregistrer.spec.ts >> Ajouter candidat
+- Location: tests\enregistrer.spec.ts:22:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByRole('link', { name: 'Candidates' })
+    - locator resolved to <a href="#" class="oxd-topbar-body-nav-tab-item">Candidates</a>
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic:
+    - complementary [ref=e4]:
+      - navigation "Sidepanel" [ref=e5]:
+        - generic [ref=e6]:
+          - link "client brand banner" [ref=e7]:
+            - /url: https://www.orangehrm.com/
+            - img "client brand banner" [ref=e9]
+          - text: 
+        - generic [ref=e10]:
+          - generic [ref=e11]:
+            - generic [ref=e12]:
+              - textbox "Search" [ref=e15]
+              - button "" [ref=e16] [cursor=pointer]:
+                - generic [ref=e17]: 
+            - separator [ref=e18]
+          - list [ref=e19]:
+            - listitem [ref=e20]:
+              - link "Admin" [ref=e21]:
+                - /url: /web/index.php/admin/viewAdminModule
+                - generic [ref=e24]: Admin
+            - listitem [ref=e25]:
+              - link "PIM" [ref=e26]:
+                - /url: /web/index.php/pim/viewPimModule
+                - generic [ref=e40]: PIM
+            - listitem [ref=e41]:
+              - link "Leave" [ref=e42]:
+                - /url: /web/index.php/leave/viewLeaveModule
+                - generic [ref=e45]: Leave
+            - listitem [ref=e46]:
+              - link "Time" [ref=e47]:
+                - /url: /web/index.php/time/viewTimeModule
+                - generic [ref=e53]: Time
+            - listitem [ref=e54]:
+              - link "Recruitment" [ref=e55]:
+                - /url: /web/index.php/recruitment/viewRecruitmentModule
+                - generic [ref=e61]: Recruitment
+            - listitem [ref=e62]:
+              - link "My Info" [ref=e63]:
+                - /url: /web/index.php/pim/viewMyDetails
+                - generic [ref=e69]: My Info
+            - listitem [ref=e70]:
+              - link "Performance" [ref=e71]:
+                - /url: /web/index.php/performance/viewPerformanceModule
+                - generic [ref=e79]: Performance
+            - listitem [ref=e80]:
+              - link "Dashboard" [ref=e81]:
+                - /url: /web/index.php/dashboard/index
+                - generic [ref=e84]: Dashboard
+            - listitem [ref=e85]:
+              - link "Directory" [ref=e86]:
+                - /url: /web/index.php/directory/viewDirectory
+                - generic [ref=e89]: Directory
+            - listitem [ref=e90]:
+              - link "Maintenance" [ref=e91]:
+                - /url: /web/index.php/maintenance/viewMaintenanceModule
+                - generic [ref=e95]: Maintenance
+            - listitem [ref=e96]:
+              - link "Claim" [ref=e97]:
+                - /url: /web/index.php/claim/viewClaimModule
+                - img [ref=e100]
+                - generic [ref=e104]: Claim
+            - listitem [ref=e105]:
+              - link "Buzz" [ref=e106]:
+                - /url: /web/index.php/buzz/viewBuzz
+                - generic [ref=e109]: Buzz
+    - banner [ref=e110]:
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - text: 
+          - heading "Recruitment" [level=6] [ref=e114]
+        - link "Upgrade" [ref=e116]:
+          - /url: https://orangehrm.com/open-source/upgrade-to-advanced
+          - button "Upgrade" [ref=e117] [cursor=pointer]: Upgrade
+        - list [ref=e123]:
+          - listitem [ref=e124]:
+            - generic [ref=e125] [cursor=pointer]:
+              - img "profile picture" [ref=e126]
+              - paragraph [ref=e127]: Michael Taylor
+              - generic [ref=e128]: 
+      - navigation "Topbar Menu" [ref=e130]:
+        - list [ref=e131]:
+          - listitem [ref=e132] [cursor=pointer]:
+            - link "Candidates" [ref=e133]:
+              - /url: "#"
+          - listitem [ref=e134] [cursor=pointer]:
+            - link "Vacancies" [ref=e135]:
+              - /url: "#"
+          - button "" [ref=e137] [cursor=pointer]:
+            - generic [ref=e138]: 
+  - generic [ref=e139]:
+    - generic [ref=e141]:
+      - generic [ref=e142]:
+        - generic [ref=e143]:
+          - heading "Candidates" [level=5] [ref=e145]
+          - button "" [ref=e148] [cursor=pointer]:
+            - generic [ref=e149]: 
+        - separator [ref=e150]
+        - generic [ref=e152]:
+          - generic [ref=e154]:
+            - generic [ref=e156]:
+              - generic [ref=e158]: Job Title
+              - generic [ref=e161] [cursor=pointer]:
+                - generic [ref=e162]: "-- Select --"
+                - generic [ref=e164]: 
+            - generic [ref=e166]:
+              - generic [ref=e168]: Vacancy
+              - generic [ref=e171] [cursor=pointer]:
+                - generic [ref=e172]: "-- Select --"
+                - generic [ref=e174]: 
+            - generic [ref=e176]:
+              - generic [ref=e178]: Hiring Manager
+              - generic [ref=e181] [cursor=pointer]:
+                - generic [ref=e182]: "-- Select --"
+                - generic [ref=e184]: 
+            - generic [ref=e186]:
+              - generic [ref=e188]: Status
+              - generic [ref=e191] [cursor=pointer]:
+                - generic [ref=e192]: "-- Select --"
+                - generic [ref=e194]: 
+          - generic [ref=e196]:
+            - generic [ref=e198]:
+              - generic [ref=e200]: Candidate Name
+              - textbox "Type for hints..." [ref=e204]
+            - generic [ref=e206]:
+              - generic [ref=e208]: Keywords
+              - textbox "Enter comma seperated words..." [ref=e210]
+            - generic [ref=e212]:
+              - generic [ref=e214]: Date of Application
+              - generic [ref=e217]:
+                - textbox "From" [ref=e218]
+                - generic [ref=e219] [cursor=pointer]: 
+            - generic [ref=e226]:
+              - textbox "To" [ref=e227]
+              - generic [ref=e228] [cursor=pointer]: 
+          - generic [ref=e232]:
+            - generic [ref=e234]: Method of Application
+            - generic [ref=e237] [cursor=pointer]:
+              - generic [ref=e238]: "-- Select --"
+              - generic [ref=e240]: 
+          - separator [ref=e241]
+          - generic [ref=e242]:
+            - button "Reset" [ref=e243] [cursor=pointer]
+            - button "Search" [ref=e244] [cursor=pointer]
+      - generic [ref=e245]:
+        - button " Add" [ref=e247] [cursor=pointer]:
+          - generic [ref=e248]: 
+          - text: Add
+        - generic [ref=e249]:
+          - separator [ref=e250]
+          - generic [ref=e252]: (60) Records Found
+        - table [ref=e254]:
+          - rowgroup [ref=e255]:
+            - row " Vacancy  Candidate  Hiring Manager  Date of Application  Status  Actions" [ref=e256]:
+              - columnheader "" [ref=e257]:
+                - generic [ref=e259] [cursor=pointer]:
+                  - checkbox "" [ref=e260]
+                  - generic [ref=e262]: 
+              - columnheader "Vacancy " [ref=e263]:
+                - text: Vacancy
+                - generic [ref=e264]:
+                  - generic [ref=e265] [cursor=pointer]: 
+                  - text:  
+              - columnheader "Candidate " [ref=e266]:
+                - text: Candidate
+                - generic [ref=e267]:
+                  - generic [ref=e268] [cursor=pointer]: 
+                  - text:  
+              - columnheader "Hiring Manager " [ref=e269]:
+                - text: Hiring Manager
+                - generic [ref=e270]:
+                  - generic [ref=e271] [cursor=pointer]: 
+                  - text:  
+              - columnheader "Date of Application " [ref=e272]:
+                - text: Date of Application
+                - generic [ref=e273]:
+                  - generic [ref=e274] [cursor=pointer]: 
+                  - text:  
+              - columnheader "Status " [ref=e275]:
+                - text: Status
+                - generic [ref=e276]:
+                  - generic [ref=e277] [cursor=pointer]: 
+                  - text:  
+              - columnheader "Actions" [ref=e278]
+          - rowgroup [ref=e279]:
+            - row " Tanmay Anderson O'Keefe (Deleted) 2024-29-03  " [ref=e281]:
+              - cell "" [ref=e282]:
+                - generic [ref=e285] [cursor=pointer]:
+                  - checkbox "" [ref=e286]
+                  - generic [ref=e288]: 
+              - cell [ref=e289]
+              - cell "Tanmay Anderson O'Keefe" [ref=e290]:
+                - generic [ref=e291]: Tanmay Anderson O'Keefe
+              - cell "(Deleted)" [ref=e292]:
+                - generic [ref=e293]: (Deleted)
+              - cell "2024-29-03" [ref=e294]:
+                - generic [ref=e295]: 2024-29-03
+              - cell [ref=e296]
+              - cell " " [ref=e297]:
+                - generic [ref=e298]:
+                  - button "" [ref=e299] [cursor=pointer]:
+                    - generic [ref=e300]: 
+                  - button "" [ref=e301] [cursor=pointer]:
+                    - generic [ref=e302]: 
+            - row " Tanmay sree Dachu (Deleted) 2024-06-02   " [ref=e304]:
+              - cell "" [ref=e305]:
+                - generic [ref=e308] [cursor=pointer]:
+                  - checkbox "" [ref=e309]
+                  - generic [ref=e311]: 
+              - cell [ref=e312]
+              - cell "Tanmay sree Dachu" [ref=e313]:
+                - generic [ref=e314]: Tanmay sree Dachu
+              - cell "(Deleted)" [ref=e315]:
+                - generic [ref=e316]: (Deleted)
+              - cell "2024-06-02" [ref=e317]:
+                - generic [ref=e318]: 2024-06-02
+              - cell [ref=e319]
+              - cell "  " [ref=e320]:
+                - generic [ref=e321]:
+                  - button "" [ref=e322] [cursor=pointer]:
+                    - generic [ref=e323]: 
+                  - button "" [ref=e324] [cursor=pointer]:
+                    - generic [ref=e325]: 
+                  - button "" [ref=e326] [cursor=pointer]:
+                    - generic [ref=e327]: 
+            - row " Senior QA Lead John Doe (Deleted) 2024-06-02 Shortlisted   " [ref=e329]:
+              - cell "" [ref=e330]:
+                - generic [ref=e333] [cursor=pointer]:
+                  - checkbox "" [ref=e334]
+                  - generic [ref=e336]: 
+              - cell "Senior QA Lead" [ref=e337]:
+                - generic [ref=e338]: Senior QA Lead
+              - cell "John Doe" [ref=e339]:
+                - generic [ref=e340]: John Doe
+              - cell "(Deleted)" [ref=e341]:
+                - generic [ref=e342]: (Deleted)
+              - cell "2024-06-02" [ref=e343]:
+                - generic [ref=e344]: 2024-06-02
+              - cell "Shortlisted" [ref=e345]:
+                - generic [ref=e346]: Shortlisted
+              - cell "  " [ref=e347]:
+                - generic [ref=e348]:
+                  - button "" [ref=e349] [cursor=pointer]:
+                    - generic [ref=e350]: 
+                  - button "" [ref=e351] [cursor=pointer]:
+                    - generic [ref=e352]: 
+                  - button "" [ref=e353] [cursor=pointer]:
+                    - generic [ref=e354]: 
+            - row " Senior QA Lead John Doe (Deleted) 2024-06-02 Shortlisted   " [ref=e356]:
+              - cell "" [ref=e357]:
+                - generic [ref=e360] [cursor=pointer]:
+                  - checkbox "" [ref=e361]
+                  - generic [ref=e363]: 
+              - cell "Senior QA Lead" [ref=e364]:
+                - generic [ref=e365]: Senior QA Lead
+              - cell "John Doe" [ref=e366]:
+                - generic [ref=e367]: John Doe
+              - cell "(Deleted)" [ref=e368]:
+                - generic [ref=e369]: (Deleted)
+              - cell "2024-06-02" [ref=e370]:
+                - generic [ref=e371]: 2024-06-02
+              - cell "Shortlisted" [ref=e372]:
+                - generic [ref=e373]: Shortlisted
+              - cell "  " [ref=e374]:
+                - generic [ref=e375]:
+                  - button "" [ref=e376] [cursor=pointer]:
+                    - generic [ref=e377]: 
+                  - button "" [ref=e378] [cursor=pointer]:
+                    - generic [ref=e379]: 
+                  - button "" [ref=e380] [cursor=pointer]:
+                    - generic [ref=e381]: 
+            - row " Senior QA Lead John Doe (Deleted) 2024-06-02 Shortlisted   " [ref=e383]:
+              - cell "" [ref=e384]:
+                - generic [ref=e387] [cursor=pointer]:
+                  - checkbox "" [ref=e388]
+                  - generic [ref=e390]: 
+              - cell "Senior QA Lead" [ref=e391]:
+                - generic [ref=e392]: Senior QA Lead
+              - cell "John Doe" [ref=e393]:
+                - generic [ref=e394]: John Doe
+              - cell "(Deleted)" [ref=e395]:
+                - generic [ref=e396]: (Deleted)
+              - cell "2024-06-02" [ref=e397]:
+                - generic [ref=e398]: 2024-06-02
+              - cell "Shortlisted" [ref=e399]:
+                - generic [ref=e400]: Shortlisted
+              - cell "  " [ref=e401]:
+                - generic [ref=e402]:
+                  - button "" [ref=e403] [cursor=pointer]:
+                    - generic [ref=e404]: 
+                  - button "" [ref=e405] [cursor=pointer]:
+                    - generic [ref=e406]: 
+                  - button "" [ref=e407] [cursor=pointer]:
+                    - generic [ref=e408]: 
+            - row " Senior QA Lead John Doe (Deleted) 2024-06-02 Shortlisted   " [ref=e410]:
+              - cell "" [ref=e411]:
+                - generic [ref=e414] [cursor=pointer]:
+                  - checkbox "" [ref=e415]
+                  - generic [ref=e417]: 
+              - cell "Senior QA Lead" [ref=e418]:
+                - generic [ref=e419]: Senior QA Lead
+              - cell "John Doe" [ref=e420]:
+                - generic [ref=e421]: John Doe
+              - cell "(Deleted)" [ref=e422]:
+                - generic [ref=e423]: (Deleted)
+              - cell "2024-06-02" [ref=e424]:
+                - generic [ref=e425]: 2024-06-02
+              - cell "Shortlisted" [ref=e426]:
+                - generic [ref=e427]: Shortlisted
+              - cell "  " [ref=e428]:
+                - generic [ref=e429]:
+                  - button "" [ref=e430] [cursor=pointer]:
+                    - generic [ref=e431]: 
+                  - button "" [ref=e432] [cursor=pointer]:
+                    - generic [ref=e433]: 
+                  - button "" [ref=e434] [cursor=pointer]:
+                    - generic [ref=e435]: 
+            - row " Senior QA Lead John Doe (Deleted) 2024-06-02 Shortlisted   " [ref=e437]:
+              - cell "" [ref=e438]:
+                - generic [ref=e441] [cursor=pointer]:
+                  - checkbox "" [ref=e442]
+                  - generic [ref=e444]: 
+              - cell "Senior QA Lead" [ref=e445]:
+                - generic [ref=e446]: Senior QA Lead
+              - cell "John Doe" [ref=e447]:
+                - generic [ref=e448]: John Doe
+              - cell "(Deleted)" [ref=e449]:
+                - generic [ref=e450]: (Deleted)
+              - cell "2024-06-02" [ref=e451]:
+                - generic [ref=e452]: 2024-06-02
+              - cell "Shortlisted" [ref=e453]:
+                - generic [ref=e454]: Shortlisted
+              - cell "  " [ref=e455]:
+                - generic [ref=e456]:
+                  - button "" [ref=e457] [cursor=pointer]:
+                    - generic [ref=e458]: 
+                  - button "" [ref=e459] [cursor=pointer]:
+                    - generic [ref=e460]: 
+                  - button "" [ref=e461] [cursor=pointer]:
+                    - generic [ref=e462]: 
+            - row " Senior QA Lead John Doe (Deleted) 2024-06-02 Shortlisted   " [ref=e464]:
+              - cell "" [ref=e465]:
+                - generic [ref=e468] [cursor=pointer]:
+                  - checkbox "" [ref=e469]
+                  - generic [ref=e471]: 
+              - cell "Senior QA Lead" [ref=e472]:
+                - generic [ref=e473]: Senior QA Lead
+              - cell "John Doe" [ref=e474]:
+                - generic [ref=e475]: John Doe
+              - cell "(Deleted)" [ref=e476]:
+                - generic [ref=e477]: (Deleted)
+              - cell "2024-06-02" [ref=e478]:
+                - generic [ref=e479]: 2024-06-02
+              - cell "Shortlisted" [ref=e480]:
+                - generic [ref=e481]: Shortlisted
+              - cell "  " [ref=e482]:
+                - generic [ref=e483]:
+                  - button "" [ref=e484] [cursor=pointer]:
+                    - generic [ref=e485]: 
+                  - button "" [ref=e486] [cursor=pointer]:
+                    - generic [ref=e487]: 
+                  - button "" [ref=e488] [cursor=pointer]:
+                    - generic [ref=e489]: 
+            - row " Senior QA Lead John Doe (Deleted) 2024-06-02 Rejected   " [ref=e491]:
+              - cell "" [ref=e492]:
+                - generic [ref=e495] [cursor=pointer]:
+                  - checkbox "" [ref=e496]
+                  - generic [ref=e498]: 
+              - cell "Senior QA Lead" [ref=e499]:
+                - generic [ref=e500]: Senior QA Lead
+              - cell "John Doe" [ref=e501]:
+                - generic [ref=e502]: John Doe
+              - cell "(Deleted)" [ref=e503]:
+                - generic [ref=e504]: (Deleted)
+              - cell "2024-06-02" [ref=e505]:
+                - generic [ref=e506]: 2024-06-02
+              - cell "Rejected" [ref=e507]:
+                - generic [ref=e508]: Rejected
+              - cell "  " [ref=e509]:
+                - generic [ref=e510]:
+                  - button "" [ref=e511] [cursor=pointer]:
+                    - generic [ref=e512]: 
+                  - button "" [ref=e513] [cursor=pointer]:
+                    - generic [ref=e514]: 
+                  - button "" [ref=e515] [cursor=pointer]:
+                    - generic [ref=e516]: 
+            - row " Senior QA Lead John Doe (Deleted) 2024-06-02 Shortlisted   " [ref=e518]:
+              - cell "" [ref=e519]:
+                - generic [ref=e522] [cursor=pointer]:
+                  - checkbox "" [ref=e523]
+                  - generic [ref=e525]: 
+              - cell "Senior QA Lead" [ref=e526]:
+                - generic [ref=e527]: Senior QA Lead
+              - cell "John Doe" [ref=e528]:
+                - generic [ref=e529]: John Doe
+              - cell "(Deleted)" [ref=e530]:
+                - generic [ref=e531]: (Deleted)
+              - cell "2024-06-02" [ref=e532]:
+                - generic [ref=e533]: 2024-06-02
+              - cell "Shortlisted" [ref=e534]:
+                - generic [ref=e535]: Shortlisted
+              - cell "  " [ref=e536]:
+                - generic [ref=e537]:
+                  - button "" [ref=e538] [cursor=pointer]:
+                    - generic [ref=e539]: 
+                  - button "" [ref=e540] [cursor=pointer]:
+                    - generic [ref=e541]: 
+                  - button "" [ref=e542] [cursor=pointer]:
+                    - generic [ref=e543]: 
+            - row " Manu K M (Deleted) 2024-06-02  " [ref=e545]:
+              - cell "" [ref=e546]:
+                - generic [ref=e549] [cursor=pointer]:
+                  - checkbox "" [ref=e550]
+                  - generic [ref=e552]: 
+              - cell [ref=e553]
+              - cell "Manu K M" [ref=e554]:
+                - generic [ref=e555]: Manu K M
+              - cell "(Deleted)" [ref=e556]:
+                - generic [ref=e557]: (Deleted)
+              - cell "2024-06-02" [ref=e558]:
+                - generic [ref=e559]: 2024-06-02
+              - cell [ref=e560]
+              - cell " " [ref=e561]:
+                - generic [ref=e562]:
+                  - button "" [ref=e563] [cursor=pointer]:
+                    - generic [ref=e564]: 
+                  - button "" [ref=e565] [cursor=pointer]:
+                    - generic [ref=e566]: 
+            - row " Manu K M (Deleted) 2024-06-02  " [ref=e568]:
+              - cell "" [ref=e569]:
+                - generic [ref=e572] [cursor=pointer]:
+                  - checkbox "" [ref=e573]
+                  - generic [ref=e575]: 
+              - cell [ref=e576]
+              - cell "Manu K M" [ref=e577]:
+                - generic [ref=e578]: Manu K M
+              - cell "(Deleted)" [ref=e579]:
+                - generic [ref=e580]: (Deleted)
+              - cell "2024-06-02" [ref=e581]:
+                - generic [ref=e582]: 2024-06-02
+              - cell [ref=e583]
+              - cell " " [ref=e584]:
+                - generic [ref=e585]:
+                  - button "" [ref=e586] [cursor=pointer]:
+                    - generic [ref=e587]: 
+                  - button "" [ref=e588] [cursor=pointer]:
+                    - generic [ref=e589]: 
+            - row " Manu K M (Deleted) 2024-06-02  " [ref=e591]:
+              - cell "" [ref=e592]:
+                - generic [ref=e595] [cursor=pointer]:
+                  - checkbox "" [ref=e596]
+                  - generic [ref=e598]: 
+              - cell [ref=e599]
+              - cell "Manu K M" [ref=e600]:
+                - generic [ref=e601]: Manu K M
+              - cell "(Deleted)" [ref=e602]:
+                - generic [ref=e603]: (Deleted)
+              - cell "2024-06-02" [ref=e604]:
+                - generic [ref=e605]: 2024-06-02
+              - cell [ref=e606]
+              - cell " " [ref=e607]:
+                - generic [ref=e608]:
+                  - button "" [ref=e609] [cursor=pointer]:
+                    - generic [ref=e610]: 
+                  - button "" [ref=e611] [cursor=pointer]:
+                    - generic [ref=e612]: 
+            - row " madhav m (Deleted) 2024-06-02  " [ref=e614]:
+              - cell "" [ref=e615]:
+                - generic [ref=e618] [cursor=pointer]:
+                  - checkbox "" [ref=e619]
+                  - generic [ref=e621]: 
+              - cell [ref=e622]
+              - cell "madhav m" [ref=e623]:
+                - generic [ref=e624]: madhav m
+              - cell "(Deleted)" [ref=e625]:
+                - generic [ref=e626]: (Deleted)
+              - cell "2024-06-02" [ref=e627]:
+                - generic [ref=e628]: 2024-06-02
+              - cell [ref=e629]
+              - cell " " [ref=e630]:
+                - generic [ref=e631]:
+                  - button "" [ref=e632] [cursor=pointer]:
+                    - generic [ref=e633]: 
+                  - button "" [ref=e634] [cursor=pointer]:
+                    - generic [ref=e635]: 
+            - row " madhav m (Deleted) 2024-06-02  " [ref=e637]:
+              - cell "" [ref=e638]:
+                - generic [ref=e641] [cursor=pointer]:
+                  - checkbox "" [ref=e642]
+                  - generic [ref=e644]: 
+              - cell [ref=e645]
+              - cell "madhav m" [ref=e646]:
+                - generic [ref=e647]: madhav m
+              - cell "(Deleted)" [ref=e648]:
+                - generic [ref=e649]: (Deleted)
+              - cell "2024-06-02" [ref=e650]:
+                - generic [ref=e651]: 2024-06-02
+              - cell [ref=e652]
+              - cell " " [ref=e653]:
+                - generic [ref=e654]:
+                  - button "" [ref=e655] [cursor=pointer]:
+                    - generic [ref=e656]: 
+                  - button "" [ref=e657] [cursor=pointer]:
+                    - generic [ref=e658]: 
+            - row " madhav m (Deleted) 2024-06-02  " [ref=e660]:
+              - cell "" [ref=e661]:
+                - generic [ref=e664] [cursor=pointer]:
+                  - checkbox "" [ref=e665]
+                  - generic [ref=e667]: 
+              - cell [ref=e668]
+              - cell "madhav m" [ref=e669]:
+                - generic [ref=e670]: madhav m
+              - cell "(Deleted)" [ref=e671]:
+                - generic [ref=e672]: (Deleted)
+              - cell "2024-06-02" [ref=e673]:
+                - generic [ref=e674]: 2024-06-02
+              - cell [ref=e675]
+              - cell " " [ref=e676]:
+                - generic [ref=e677]:
+                  - button "" [ref=e678] [cursor=pointer]:
+                    - generic [ref=e679]: 
+                  - button "" [ref=e680] [cursor=pointer]:
+                    - generic [ref=e681]: 
+            - row " madhav m (Deleted) 2024-06-02  " [ref=e683]:
+              - cell "" [ref=e684]:
+                - generic [ref=e687] [cursor=pointer]:
+                  - checkbox "" [ref=e688]
+                  - generic [ref=e690]: 
+              - cell [ref=e691]
+              - cell "madhav m" [ref=e692]:
+                - generic [ref=e693]: madhav m
+              - cell "(Deleted)" [ref=e694]:
+                - generic [ref=e695]: (Deleted)
+              - cell "2024-06-02" [ref=e696]:
+                - generic [ref=e697]: 2024-06-02
+              - cell [ref=e698]
+              - cell " " [ref=e699]:
+                - generic [ref=e700]:
+                  - button "" [ref=e701] [cursor=pointer]:
+                    - generic [ref=e702]: 
+                  - button "" [ref=e703] [cursor=pointer]:
+                    - generic [ref=e704]: 
+            - row " madhav m (Deleted) 2024-06-02  " [ref=e706]:
+              - cell "" [ref=e707]:
+                - generic [ref=e710] [cursor=pointer]:
+                  - checkbox "" [ref=e711]
+                  - generic [ref=e713]: 
+              - cell [ref=e714]
+              - cell "madhav m" [ref=e715]:
+                - generic [ref=e716]: madhav m
+              - cell "(Deleted)" [ref=e717]:
+                - generic [ref=e718]: (Deleted)
+              - cell "2024-06-02" [ref=e719]:
+                - generic [ref=e720]: 2024-06-02
+              - cell [ref=e721]
+              - cell " " [ref=e722]:
+                - generic [ref=e723]:
+                  - button "" [ref=e724] [cursor=pointer]:
+                    - generic [ref=e725]: 
+                  - button "" [ref=e726] [cursor=pointer]:
+                    - generic [ref=e727]: 
+            - row " madhav m (Deleted) 2024-06-02  " [ref=e729]:
+              - cell "" [ref=e730]:
+                - generic [ref=e733] [cursor=pointer]:
+                  - checkbox "" [ref=e734]
+                  - generic [ref=e736]: 
+              - cell [ref=e737]
+              - cell "madhav m" [ref=e738]:
+                - generic [ref=e739]: madhav m
+              - cell "(Deleted)" [ref=e740]:
+                - generic [ref=e741]: (Deleted)
+              - cell "2024-06-02" [ref=e742]:
+                - generic [ref=e743]: 2024-06-02
+              - cell [ref=e744]
+              - cell " " [ref=e745]:
+                - generic [ref=e746]:
+                  - button "" [ref=e747] [cursor=pointer]:
+                    - generic [ref=e748]: 
+                  - button "" [ref=e749] [cursor=pointer]:
+                    - generic [ref=e750]: 
+            - row " Senior QA Lead Gautham Raj R (Deleted) 2024-06-02 Rejected   " [ref=e752]:
+              - cell "" [ref=e753]:
+                - generic [ref=e756] [cursor=pointer]:
+                  - checkbox "" [ref=e757]
+                  - generic [ref=e759]: 
+              - cell "Senior QA Lead" [ref=e760]:
+                - generic [ref=e761]: Senior QA Lead
+              - cell "Gautham Raj R" [ref=e762]:
+                - generic [ref=e763]: Gautham Raj R
+              - cell "(Deleted)" [ref=e764]:
+                - generic [ref=e765]: (Deleted)
+              - cell "2024-06-02" [ref=e766]:
+                - generic [ref=e767]: 2024-06-02
+              - cell "Rejected" [ref=e768]:
+                - generic [ref=e769]: Rejected
+              - cell "  " [ref=e770]:
+                - generic [ref=e771]:
+                  - button "" [ref=e772] [cursor=pointer]:
+                    - generic [ref=e773]: 
+                  - button "" [ref=e774] [cursor=pointer]:
+                    - generic [ref=e775]: 
+                  - button "" [ref=e776] [cursor=pointer]:
+                    - generic [ref=e777]: 
+            - row " Senior QA Lead Gautham Raj R (Deleted) 2024-06-02 Shortlisted   " [ref=e779]:
+              - cell "" [ref=e780]:
+                - generic [ref=e783] [cursor=pointer]:
+                  - checkbox "" [ref=e784]
+                  - generic [ref=e786]: 
+              - cell "Senior QA Lead" [ref=e787]:
+                - generic [ref=e788]: Senior QA Lead
+              - cell "Gautham Raj R" [ref=e789]:
+                - generic [ref=e790]: Gautham Raj R
+              - cell "(Deleted)" [ref=e791]:
+                - generic [ref=e792]: (Deleted)
+              - cell "2024-06-02" [ref=e793]:
+                - generic [ref=e794]: 2024-06-02
+              - cell "Shortlisted" [ref=e795]:
+                - generic [ref=e796]: Shortlisted
+              - cell "  " [ref=e797]:
+                - generic [ref=e798]:
+                  - button "" [ref=e799] [cursor=pointer]:
+                    - generic [ref=e800]: 
+                  - button "" [ref=e801] [cursor=pointer]:
+                    - generic [ref=e802]: 
+                  - button "" [ref=e803] [cursor=pointer]:
+                    - generic [ref=e804]: 
+            - row " Senior QA Lead Gautham Raj R (Deleted) 2024-06-02 Shortlisted   " [ref=e806]:
+              - cell "" [ref=e807]:
+                - generic [ref=e810] [cursor=pointer]:
+                  - checkbox "" [ref=e811]
+                  - generic [ref=e813]: 
+              - cell "Senior QA Lead" [ref=e814]:
+                - generic [ref=e815]: Senior QA Lead
+              - cell "Gautham Raj R" [ref=e816]:
+                - generic [ref=e817]: Gautham Raj R
+              - cell "(Deleted)" [ref=e818]:
+                - generic [ref=e819]: (Deleted)
+              - cell "2024-06-02" [ref=e820]:
+                - generic [ref=e821]: 2024-06-02
+              - cell "Shortlisted" [ref=e822]:
+                - generic [ref=e823]: Shortlisted
+              - cell "  " [ref=e824]:
+                - generic [ref=e825]:
+                  - button "" [ref=e826] [cursor=pointer]:
+                    - generic [ref=e827]: 
+                  - button "" [ref=e828] [cursor=pointer]:
+                    - generic [ref=e829]: 
+                  - button "" [ref=e830] [cursor=pointer]:
+                    - generic [ref=e831]: 
+            - row " Senior QA Lead Gautham Raj R (Deleted) 2024-06-02 Shortlisted   " [ref=e833]:
+              - cell "" [ref=e834]:
+                - generic [ref=e837] [cursor=pointer]:
+                  - checkbox "" [ref=e838]
+                  - generic [ref=e840]: 
+              - cell "Senior QA Lead" [ref=e841]:
+                - generic [ref=e842]: Senior QA Lead
+              - cell "Gautham Raj R" [ref=e843]:
+                - generic [ref=e844]: Gautham Raj R
+              - cell "(Deleted)" [ref=e845]:
+                - generic [ref=e846]: (Deleted)
+              - cell "2024-06-02" [ref=e847]:
+                - generic [ref=e848]: 2024-06-02
+              - cell "Shortlisted" [ref=e849]:
+                - generic [ref=e850]: Shortlisted
+              - cell "  " [ref=e851]:
+                - generic [ref=e852]:
+                  - button "" [ref=e853] [cursor=pointer]:
+                    - generic [ref=e854]: 
+                  - button "" [ref=e855] [cursor=pointer]:
+                    - generic [ref=e856]: 
+                  - button "" [ref=e857] [cursor=pointer]:
+                    - generic [ref=e858]: 
+            - row " Senior QA Lead Gautham Raj R (Deleted) 2024-06-02 Application Initiated   " [ref=e860]:
+              - cell "" [ref=e861]:
+                - generic [ref=e864] [cursor=pointer]:
+                  - checkbox "" [ref=e865]
+                  - generic [ref=e867]: 
+              - cell "Senior QA Lead" [ref=e868]:
+                - generic [ref=e869]: Senior QA Lead
+              - cell "Gautham Raj R" [ref=e870]:
+                - generic [ref=e871]: Gautham Raj R
+              - cell "(Deleted)" [ref=e872]:
+                - generic [ref=e873]: (Deleted)
+              - cell "2024-06-02" [ref=e874]:
+                - generic [ref=e875]: 2024-06-02
+              - cell "Application Initiated" [ref=e876]:
+                - generic [ref=e877]: Application Initiated
+              - cell "  " [ref=e878]:
+                - generic [ref=e879]:
+                  - button "" [ref=e880] [cursor=pointer]:
+                    - generic [ref=e881]: 
+                  - button "" [ref=e882] [cursor=pointer]:
+                    - generic [ref=e883]: 
+                  - button "" [ref=e884] [cursor=pointer]:
+                    - generic [ref=e885]: 
+            - row " Senior QA Lead Gautham Raj R (Deleted) 2024-06-02 Application Initiated   " [ref=e887]:
+              - cell "" [ref=e888]:
+                - generic [ref=e891] [cursor=pointer]:
+                  - checkbox "" [ref=e892]
+                  - generic [ref=e894]: 
+              - cell "Senior QA Lead" [ref=e895]:
+                - generic [ref=e896]: Senior QA Lead
+              - cell "Gautham Raj R" [ref=e897]:
+                - generic [ref=e898]: Gautham Raj R
+              - cell "(Deleted)" [ref=e899]:
+                - generic [ref=e900]: (Deleted)
+              - cell "2024-06-02" [ref=e901]:
+                - generic [ref=e902]: 2024-06-02
+              - cell "Application Initiated" [ref=e903]:
+                - generic [ref=e904]: Application Initiated
+              - cell "  " [ref=e905]:
+                - generic [ref=e906]:
+                  - button "" [ref=e907] [cursor=pointer]:
+                    - generic [ref=e908]: 
+                  - button "" [ref=e909] [cursor=pointer]:
+                    - generic [ref=e910]: 
+                  - button "" [ref=e911] [cursor=pointer]:
+                    - generic [ref=e912]: 
+            - row " Senior QA Lead Gautham Raj R (Deleted) 2024-06-02 Shortlisted   " [ref=e914]:
+              - cell "" [ref=e915]:
+                - generic [ref=e918] [cursor=pointer]:
+                  - checkbox "" [ref=e919]
+                  - generic [ref=e921]: 
+              - cell "Senior QA Lead" [ref=e922]:
+                - generic [ref=e923]: Senior QA Lead
+              - cell "Gautham Raj R" [ref=e924]:
+                - generic [ref=e925]: Gautham Raj R
+              - cell "(Deleted)" [ref=e926]:
+                - generic [ref=e927]: (Deleted)
+              - cell "2024-06-02" [ref=e928]:
+                - generic [ref=e929]: 2024-06-02
+              - cell "Shortlisted" [ref=e930]:
+                - generic [ref=e931]: Shortlisted
+              - cell "  " [ref=e932]:
+                - generic [ref=e933]:
+                  - button "" [ref=e934] [cursor=pointer]:
+                    - generic [ref=e935]: 
+                  - button "" [ref=e936] [cursor=pointer]:
+                    - generic [ref=e937]: 
+                  - button "" [ref=e938] [cursor=pointer]:
+                    - generic [ref=e939]: 
+            - row " Senior QA Lead Gautham Raj R (Deleted) 2024-06-02 Rejected   " [ref=e941]:
+              - cell "" [ref=e942]:
+                - generic [ref=e945] [cursor=pointer]:
+                  - checkbox "" [ref=e946]
+                  - generic [ref=e948]: 
+              - cell "Senior QA Lead" [ref=e949]:
+                - generic [ref=e950]: Senior QA Lead
+              - cell "Gautham Raj R" [ref=e951]:
+                - generic [ref=e952]: Gautham Raj R
+              - cell "(Deleted)" [ref=e953]:
+                - generic [ref=e954]: (Deleted)
+              - cell "2024-06-02" [ref=e955]:
+                - generic [ref=e956]: 2024-06-02
+              - cell "Rejected" [ref=e957]:
+                - generic [ref=e958]: Rejected
+              - cell "  " [ref=e959]:
+                - generic [ref=e960]:
+                  - button "" [ref=e961] [cursor=pointer]:
+                    - generic [ref=e962]: 
+                  - button "" [ref=e963] [cursor=pointer]:
+                    - generic [ref=e964]: 
+                  - button "" [ref=e965] [cursor=pointer]:
+                    - generic [ref=e966]: 
+            - row " Senior QA Lead Gautham Raj R (Deleted) 2024-06-02 Shortlisted   " [ref=e968]:
+              - cell "" [ref=e969]:
+                - generic [ref=e972] [cursor=pointer]:
+                  - checkbox "" [ref=e973]
+                  - generic [ref=e975]: 
+              - cell "Senior QA Lead" [ref=e976]:
+                - generic [ref=e977]: Senior QA Lead
+              - cell "Gautham Raj R" [ref=e978]:
+                - generic [ref=e979]: Gautham Raj R
+              - cell "(Deleted)" [ref=e980]:
+                - generic [ref=e981]: (Deleted)
+              - cell "2024-06-02" [ref=e982]:
+                - generic [ref=e983]: 2024-06-02
+              - cell "Shortlisted" [ref=e984]:
+                - generic [ref=e985]: Shortlisted
+              - cell "  " [ref=e986]:
+                - generic [ref=e987]:
+                  - button "" [ref=e988] [cursor=pointer]:
+                    - generic [ref=e989]: 
+                  - button "" [ref=e990] [cursor=pointer]:
+                    - generic [ref=e991]: 
+                  - button "" [ref=e992] [cursor=pointer]:
+                    - generic [ref=e993]: 
+            - row " Senior QA Lead Gautham Raj R (Deleted) 2024-06-02 Shortlisted   " [ref=e995]:
+              - cell "" [ref=e996]:
+                - generic [ref=e999] [cursor=pointer]:
+                  - checkbox "" [ref=e1000]
+                  - generic [ref=e1002]: 
+              - cell "Senior QA Lead" [ref=e1003]:
+                - generic [ref=e1004]: Senior QA Lead
+              - cell "Gautham Raj R" [ref=e1005]:
+                - generic [ref=e1006]: Gautham Raj R
+              - cell "(Deleted)" [ref=e1007]:
+                - generic [ref=e1008]: (Deleted)
+              - cell "2024-06-02" [ref=e1009]:
+                - generic [ref=e1010]: 2024-06-02
+              - cell "Shortlisted" [ref=e1011]:
+                - generic [ref=e1012]: Shortlisted
+              - cell "  " [ref=e1013]:
+                - generic [ref=e1014]:
+                  - button "" [ref=e1015] [cursor=pointer]:
+                    - generic [ref=e1016]: 
+                  - button "" [ref=e1017] [cursor=pointer]:
+                    - generic [ref=e1018]: 
+                  - button "" [ref=e1019] [cursor=pointer]:
+                    - generic [ref=e1020]: 
+            - row " Senior QA Lead Gautham Raj R (Deleted) 2024-06-02 Shortlisted   " [ref=e1022]:
+              - cell "" [ref=e1023]:
+                - generic [ref=e1026] [cursor=pointer]:
+                  - checkbox "" [ref=e1027]
+                  - generic [ref=e1029]: 
+              - cell "Senior QA Lead" [ref=e1030]:
+                - generic [ref=e1031]: Senior QA Lead
+              - cell "Gautham Raj R" [ref=e1032]:
+                - generic [ref=e1033]: Gautham Raj R
+              - cell "(Deleted)" [ref=e1034]:
+                - generic [ref=e1035]: (Deleted)
+              - cell "2024-06-02" [ref=e1036]:
+                - generic [ref=e1037]: 2024-06-02
+              - cell "Shortlisted" [ref=e1038]:
+                - generic [ref=e1039]: Shortlisted
+              - cell "  " [ref=e1040]:
+                - generic [ref=e1041]:
+                  - button "" [ref=e1042] [cursor=pointer]:
+                    - generic [ref=e1043]: 
+                  - button "" [ref=e1044] [cursor=pointer]:
+                    - generic [ref=e1045]: 
+                  - button "" [ref=e1046] [cursor=pointer]:
+                    - generic [ref=e1047]: 
+            - row " Senior QA Lead Gautham Raj R (Deleted) 2024-06-02 Shortlisted   " [ref=e1049]:
+              - cell "" [ref=e1050]:
+                - generic [ref=e1053] [cursor=pointer]:
+                  - checkbox "" [ref=e1054]
+                  - generic [ref=e1056]: 
+              - cell "Senior QA Lead" [ref=e1057]:
+                - generic [ref=e1058]: Senior QA Lead
+              - cell "Gautham Raj R" [ref=e1059]:
+                - generic [ref=e1060]: Gautham Raj R
+              - cell "(Deleted)" [ref=e1061]:
+                - generic [ref=e1062]: (Deleted)
+              - cell "2024-06-02" [ref=e1063]:
+                - generic [ref=e1064]: 2024-06-02
+              - cell "Shortlisted" [ref=e1065]:
+                - generic [ref=e1066]: Shortlisted
+              - cell "  " [ref=e1067]:
+                - generic [ref=e1068]:
+                  - button "" [ref=e1069] [cursor=pointer]:
+                    - generic [ref=e1070]: 
+                  - button "" [ref=e1071] [cursor=pointer]:
+                    - generic [ref=e1072]: 
+                  - button "" [ref=e1073] [cursor=pointer]:
+                    - generic [ref=e1074]: 
+            - row " Senior QA Lead Gautham Raj R (Deleted) 2024-06-02 Shortlisted   " [ref=e1076]:
+              - cell "" [ref=e1077]:
+                - generic [ref=e1080] [cursor=pointer]:
+                  - checkbox "" [ref=e1081]
+                  - generic [ref=e1083]: 
+              - cell "Senior QA Lead" [ref=e1084]:
+                - generic [ref=e1085]: Senior QA Lead
+              - cell "Gautham Raj R" [ref=e1086]:
+                - generic [ref=e1087]: Gautham Raj R
+              - cell "(Deleted)" [ref=e1088]:
+                - generic [ref=e1089]: (Deleted)
+              - cell "2024-06-02" [ref=e1090]:
+                - generic [ref=e1091]: 2024-06-02
+              - cell "Shortlisted" [ref=e1092]:
+                - generic [ref=e1093]: Shortlisted
+              - cell "  " [ref=e1094]:
+                - generic [ref=e1095]:
+                  - button "" [ref=e1096] [cursor=pointer]:
+                    - generic [ref=e1097]: 
+                  - button "" [ref=e1098] [cursor=pointer]:
+                    - generic [ref=e1099]: 
+                  - button "" [ref=e1100] [cursor=pointer]:
+                    - generic [ref=e1101]: 
+            - row " Senior QA Lead Cedric C Ross. (Deleted) 2024-06-02 Shortlisted   " [ref=e1103]:
+              - cell "" [ref=e1104]:
+                - generic [ref=e1107] [cursor=pointer]:
+                  - checkbox "" [ref=e1108]
+                  - generic [ref=e1110]: 
+              - cell "Senior QA Lead" [ref=e1111]:
+                - generic [ref=e1112]: Senior QA Lead
+              - cell "Cedric C Ross." [ref=e1113]:
+                - generic [ref=e1114]: Cedric C Ross.
+              - cell "(Deleted)" [ref=e1115]:
+                - generic [ref=e1116]: (Deleted)
+              - cell "2024-06-02" [ref=e1117]:
+                - generic [ref=e1118]: 2024-06-02
+              - cell "Shortlisted" [ref=e1119]:
+                - generic [ref=e1120]: Shortlisted
+              - cell "  " [ref=e1121]:
+                - generic [ref=e1122]:
+                  - button "" [ref=e1123] [cursor=pointer]:
+                    - generic [ref=e1124]: 
+                  - button "" [ref=e1125] [cursor=pointer]:
+                    - generic [ref=e1126]: 
+                  - button "" [ref=e1127] [cursor=pointer]:
+                    - generic [ref=e1128]: 
+            - row " Senior QA Lead Cedric C Ross. (Deleted) 2024-06-02 Shortlisted   " [ref=e1130]:
+              - cell "" [ref=e1131]:
+                - generic [ref=e1134] [cursor=pointer]:
+                  - checkbox "" [ref=e1135]
+                  - generic [ref=e1137]: 
+              - cell "Senior QA Lead" [ref=e1138]:
+                - generic [ref=e1139]: Senior QA Lead
+              - cell "Cedric C Ross." [ref=e1140]:
+                - generic [ref=e1141]: Cedric C Ross.
+              - cell "(Deleted)" [ref=e1142]:
+                - generic [ref=e1143]: (Deleted)
+              - cell "2024-06-02" [ref=e1144]:
+                - generic [ref=e1145]: 2024-06-02
+              - cell "Shortlisted" [ref=e1146]:
+                - generic [ref=e1147]: Shortlisted
+              - cell "  " [ref=e1148]:
+                - generic [ref=e1149]:
+                  - button "" [ref=e1150] [cursor=pointer]:
+                    - generic [ref=e1151]: 
+                  - button "" [ref=e1152] [cursor=pointer]:
+                    - generic [ref=e1153]: 
+                  - button "" [ref=e1154] [cursor=pointer]:
+                    - generic [ref=e1155]: 
+            - row " Payroll Administrator TestFN TestMN TestLN Michael James Taylor 2024-06-02 Application Initiated  " [ref=e1157]:
+              - cell "" [ref=e1158]:
+                - generic [ref=e1161] [cursor=pointer]:
+                  - checkbox "" [ref=e1162]
+                  - generic [ref=e1164]: 
+              - cell "Payroll Administrator" [ref=e1165]:
+                - generic [ref=e1166]: Payroll Administrator
+              - cell "TestFN TestMN TestLN" [ref=e1167]:
+                - generic [ref=e1168]: TestFN TestMN TestLN
+              - cell "Michael James Taylor" [ref=e1169]:
+                - generic [ref=e1170]: Michael James Taylor
+              - cell "2024-06-02" [ref=e1171]:
+                - generic [ref=e1172]: 2024-06-02
+              - cell "Application Initiated" [ref=e1173]:
+                - generic [ref=e1174]: Application Initiated
+              - cell " " [ref=e1175]:
+                - generic [ref=e1176]:
+                  - button "" [ref=e1177] [cursor=pointer]:
+                    - generic [ref=e1178]: 
+                  - button "" [ref=e1179] [cursor=pointer]:
+                    - generic [ref=e1180]: 
+            - row " Payroll Administrator TestFN TestMN TestLN Michael James Taylor 2024-06-02 Application Initiated  " [ref=e1182]:
+              - cell "" [ref=e1183]:
+                - generic [ref=e1186] [cursor=pointer]:
+                  - checkbox "" [ref=e1187]
+                  - generic [ref=e1189]: 
+              - cell "Payroll Administrator" [ref=e1190]:
+                - generic [ref=e1191]: Payroll Administrator
+              - cell "TestFN TestMN TestLN" [ref=e1192]:
+                - generic [ref=e1193]: TestFN TestMN TestLN
+              - cell "Michael James Taylor" [ref=e1194]:
+                - generic [ref=e1195]: Michael James Taylor
+              - cell "2024-06-02" [ref=e1196]:
+                - generic [ref=e1197]: 2024-06-02
+              - cell "Application Initiated" [ref=e1198]:
+                - generic [ref=e1199]: Application Initiated
+              - cell " " [ref=e1200]:
+                - generic [ref=e1201]:
+                  - button "" [ref=e1202] [cursor=pointer]:
+                    - generic [ref=e1203]: 
+                  - button "" [ref=e1204] [cursor=pointer]:
+                    - generic [ref=e1205]: 
+            - row " Payroll Administrator TestFN TestMN TestLN Michael James Taylor 2024-06-02 Application Initiated   " [ref=e1207]:
+              - cell "" [ref=e1208]:
+                - generic [ref=e1211] [cursor=pointer]:
+                  - checkbox "" [ref=e1212]
+                  - generic [ref=e1214]: 
+              - cell "Payroll Administrator" [ref=e1215]:
+                - generic [ref=e1216]: Payroll Administrator
+              - cell "TestFN TestMN TestLN" [ref=e1217]:
+                - generic [ref=e1218]: TestFN TestMN TestLN
+              - cell "Michael James Taylor" [ref=e1219]:
+                - generic [ref=e1220]: Michael James Taylor
+              - cell "2024-06-02" [ref=e1221]:
+                - generic [ref=e1222]: 2024-06-02
+              - cell "Application Initiated" [ref=e1223]:
+                - generic [ref=e1224]: Application Initiated
+              - cell "  " [ref=e1225]:
+                - generic [ref=e1226]:
+                  - button "" [ref=e1227] [cursor=pointer]:
+                    - generic [ref=e1228]: 
+                  - button "" [ref=e1229] [cursor=pointer]:
+                    - generic [ref=e1230]: 
+                  - button "" [ref=e1231] [cursor=pointer]:
+                    - generic [ref=e1232]: 
+            - row " Payroll Administrator TestFN TestMN TestLN Michael James Taylor 2024-06-02 Application Initiated   " [ref=e1234]:
+              - cell "" [ref=e1235]:
+                - generic [ref=e1238] [cursor=pointer]:
+                  - checkbox "" [ref=e1239]
+                  - generic [ref=e1241]: 
+              - cell "Payroll Administrator" [ref=e1242]:
+                - generic [ref=e1243]: Payroll Administrator
+              - cell "TestFN TestMN TestLN" [ref=e1244]:
+                - generic [ref=e1245]: TestFN TestMN TestLN
+              - cell "Michael James Taylor" [ref=e1246]:
+                - generic [ref=e1247]: Michael James Taylor
+              - cell "2024-06-02" [ref=e1248]:
+                - generic [ref=e1249]: 2024-06-02
+              - cell "Application Initiated" [ref=e1250]:
+                - generic [ref=e1251]: Application Initiated
+              - cell "  " [ref=e1252]:
+                - generic [ref=e1253]:
+                  - button "" [ref=e1254] [cursor=pointer]:
+                    - generic [ref=e1255]: 
+                  - button "" [ref=e1256] [cursor=pointer]:
+                    - generic [ref=e1257]: 
+                  - button "" [ref=e1258] [cursor=pointer]:
+                    - generic [ref=e1259]: 
+            - row " Payroll Administrator TestFN TestMN TestLN Michael James Taylor 2024-06-02 Application Initiated   " [ref=e1261]:
+              - cell "" [ref=e1262]:
+                - generic [ref=e1265] [cursor=pointer]:
+                  - checkbox "" [ref=e1266]
+                  - generic [ref=e1268]: 
+              - cell "Payroll Administrator" [ref=e1269]:
+                - generic [ref=e1270]: Payroll Administrator
+              - cell "TestFN TestMN TestLN" [ref=e1271]:
+                - generic [ref=e1272]: TestFN TestMN TestLN
+              - cell "Michael James Taylor" [ref=e1273]:
+                - generic [ref=e1274]: Michael James Taylor
+              - cell "2024-06-02" [ref=e1275]:
+                - generic [ref=e1276]: 2024-06-02
+              - cell "Application Initiated" [ref=e1277]:
+                - generic [ref=e1278]: Application Initiated
+              - cell "  " [ref=e1279]:
+                - generic [ref=e1280]:
+                  - button "" [ref=e1281] [cursor=pointer]:
+                    - generic [ref=e1282]: 
+                  - button "" [ref=e1283] [cursor=pointer]:
+                    - generic [ref=e1284]: 
+                  - button "" [ref=e1285] [cursor=pointer]:
+                    - generic [ref=e1286]: 
+            - row " Payroll Administrator TestFN TestMN TestLN Michael James Taylor 2024-06-02 Application Initiated   " [ref=e1288]:
+              - cell "" [ref=e1289]:
+                - generic [ref=e1292] [cursor=pointer]:
+                  - checkbox "" [ref=e1293]
+                  - generic [ref=e1295]: 
+              - cell "Payroll Administrator" [ref=e1296]:
+                - generic [ref=e1297]: Payroll Administrator
+              - cell "TestFN TestMN TestLN" [ref=e1298]:
+                - generic [ref=e1299]: TestFN TestMN TestLN
+              - cell "Michael James Taylor" [ref=e1300]:
+                - generic [ref=e1301]: Michael James Taylor
+              - cell "2024-06-02" [ref=e1302]:
+                - generic [ref=e1303]: 2024-06-02
+              - cell "Application Initiated" [ref=e1304]:
+                - generic [ref=e1305]: Application Initiated
+              - cell "  " [ref=e1306]:
+                - generic [ref=e1307]:
+                  - button "" [ref=e1308] [cursor=pointer]:
+                    - generic [ref=e1309]: 
+                  - button "" [ref=e1310] [cursor=pointer]:
+                    - generic [ref=e1311]: 
+                  - button "" [ref=e1312] [cursor=pointer]:
+                    - generic [ref=e1313]: 
+            - row " Payroll Administrator TestFN TestMN TestLN Michael James Taylor 2024-06-02 Application Initiated   " [ref=e1315]:
+              - cell "" [ref=e1316]:
+                - generic [ref=e1319] [cursor=pointer]:
+                  - checkbox "" [ref=e1320]
+                  - generic [ref=e1322]: 
+              - cell "Payroll Administrator" [ref=e1323]:
+                - generic [ref=e1324]: Payroll Administrator
+              - cell "TestFN TestMN TestLN" [ref=e1325]:
+                - generic [ref=e1326]: TestFN TestMN TestLN
+              - cell "Michael James Taylor" [ref=e1327]:
+                - generic [ref=e1328]: Michael James Taylor
+              - cell "2024-06-02" [ref=e1329]:
+                - generic [ref=e1330]: 2024-06-02
+              - cell "Application Initiated" [ref=e1331]:
+                - generic [ref=e1332]: Application Initiated
+              - cell "  " [ref=e1333]:
+                - generic [ref=e1334]:
+                  - button "" [ref=e1335] [cursor=pointer]:
+                    - generic [ref=e1336]: 
+                  - button "" [ref=e1337] [cursor=pointer]:
+                    - generic [ref=e1338]: 
+                  - button "" [ref=e1339] [cursor=pointer]:
+                    - generic [ref=e1340]: 
+            - row " AntoAnto 09:58 AM M Varghese (Deleted) 2024-06-02  " [ref=e1342]:
+              - cell "" [ref=e1343]:
+                - generic [ref=e1346] [cursor=pointer]:
+                  - checkbox "" [ref=e1347]
+                  - generic [ref=e1349]: 
+              - cell [ref=e1350]
+              - cell "AntoAnto 09:58 AM M Varghese" [ref=e1351]:
+                - generic [ref=e1352]: AntoAnto 09:58 AM M Varghese
+              - cell "(Deleted)" [ref=e1353]:
+                - generic [ref=e1354]: (Deleted)
+              - cell "2024-06-02" [ref=e1355]:
+                - generic [ref=e1356]: 2024-06-02
+              - cell [ref=e1357]
+              - cell " " [ref=e1358]:
+                - generic [ref=e1359]:
+                  - button "" [ref=e1360] [cursor=pointer]:
+                    - generic [ref=e1361]: 
+                  - button "" [ref=e1362] [cursor=pointer]:
+                    - generic [ref=e1363]: 
+            - row " Anto 10:15 AM M Varghese (Deleted) 2024-06-02  " [ref=e1365]:
+              - cell "" [ref=e1366]:
+                - generic [ref=e1369] [cursor=pointer]:
+                  - checkbox "" [ref=e1370]
+                  - generic [ref=e1372]: 
+              - cell [ref=e1373]
+              - cell "Anto 10:15 AM M Varghese" [ref=e1374]:
+                - generic [ref=e1375]: Anto 10:15 AM M Varghese
+              - cell "(Deleted)" [ref=e1376]:
+                - generic [ref=e1377]: (Deleted)
+              - cell "2024-06-02" [ref=e1378]:
+                - generic [ref=e1379]: 2024-06-02
+              - cell [ref=e1380]
+              - cell " " [ref=e1381]:
+                - generic [ref=e1382]:
+                  - button "" [ref=e1383] [cursor=pointer]:
+                    - generic [ref=e1384]: 
+                  - button "" [ref=e1385] [cursor=pointer]:
+                    - generic [ref=e1386]: 
+            - row " Anto 10:20 AM M Varghese (Deleted) 2024-06-02  " [ref=e1388]:
+              - cell "" [ref=e1389]:
+                - generic [ref=e1392] [cursor=pointer]:
+                  - checkbox "" [ref=e1393]
+                  - generic [ref=e1395]: 
+              - cell [ref=e1396]
+              - cell "Anto 10:20 AM M Varghese" [ref=e1397]:
+                - generic [ref=e1398]: Anto 10:20 AM M Varghese
+              - cell "(Deleted)" [ref=e1399]:
+                - generic [ref=e1400]: (Deleted)
+              - cell "2024-06-02" [ref=e1401]:
+                - generic [ref=e1402]: 2024-06-02
+              - cell [ref=e1403]
+              - cell " " [ref=e1404]:
+                - generic [ref=e1405]:
+                  - button "" [ref=e1406] [cursor=pointer]:
+                    - generic [ref=e1407]: 
+                  - button "" [ref=e1408] [cursor=pointer]:
+                    - generic [ref=e1409]: 
+            - row " Anto 10:26 AM M Varghese (Deleted) 2024-06-02  " [ref=e1411]:
+              - cell "" [ref=e1412]:
+                - generic [ref=e1415] [cursor=pointer]:
+                  - checkbox "" [ref=e1416]
+                  - generic [ref=e1418]: 
+              - cell [ref=e1419]
+              - cell "Anto 10:26 AM M Varghese" [ref=e1420]:
+                - generic [ref=e1421]: Anto 10:26 AM M Varghese
+              - cell "(Deleted)" [ref=e1422]:
+                - generic [ref=e1423]: (Deleted)
+              - cell "2024-06-02" [ref=e1424]:
+                - generic [ref=e1425]: 2024-06-02
+              - cell [ref=e1426]
+              - cell " " [ref=e1427]:
+                - generic [ref=e1428]:
+                  - button "" [ref=e1429] [cursor=pointer]:
+                    - generic [ref=e1430]: 
+                  - button "" [ref=e1431] [cursor=pointer]:
+                    - generic [ref=e1432]: 
+            - row " Anto 10:28 AM M Varghese (Deleted) 2024-06-02  " [ref=e1434]:
+              - cell "" [ref=e1435]:
+                - generic [ref=e1438] [cursor=pointer]:
+                  - checkbox "" [ref=e1439]
+                  - generic [ref=e1441]: 
+              - cell [ref=e1442]
+              - cell "Anto 10:28 AM M Varghese" [ref=e1443]:
+                - generic [ref=e1444]: Anto 10:28 AM M Varghese
+              - cell "(Deleted)" [ref=e1445]:
+                - generic [ref=e1446]: (Deleted)
+              - cell "2024-06-02" [ref=e1447]:
+                - generic [ref=e1448]: 2024-06-02
+              - cell [ref=e1449]
+              - cell " " [ref=e1450]:
+                - generic [ref=e1451]:
+                  - button "" [ref=e1452] [cursor=pointer]:
+                    - generic [ref=e1453]: 
+                  - button "" [ref=e1454] [cursor=pointer]:
+                    - generic [ref=e1455]: 
+            - row " Anto 10:37 AM M Varghese (Deleted) 2024-06-02  " [ref=e1457]:
+              - cell "" [ref=e1458]:
+                - generic [ref=e1461] [cursor=pointer]:
+                  - checkbox "" [ref=e1462]
+                  - generic [ref=e1464]: 
+              - cell [ref=e1465]
+              - cell "Anto 10:37 AM M Varghese" [ref=e1466]:
+                - generic [ref=e1467]: Anto 10:37 AM M Varghese
+              - cell "(Deleted)" [ref=e1468]:
+                - generic [ref=e1469]: (Deleted)
+              - cell "2024-06-02" [ref=e1470]:
+                - generic [ref=e1471]: 2024-06-02
+              - cell [ref=e1472]
+              - cell " " [ref=e1473]:
+                - generic [ref=e1474]:
+                  - button "" [ref=e1475] [cursor=pointer]:
+                    - generic [ref=e1476]: 
+                  - button "" [ref=e1477] [cursor=pointer]:
+                    - generic [ref=e1478]: 
+            - row " Anto 10:40 AM M Varghese (Deleted) 2024-06-02  " [ref=e1480]:
+              - cell "" [ref=e1481]:
+                - generic [ref=e1484] [cursor=pointer]:
+                  - checkbox "" [ref=e1485]
+                  - generic [ref=e1487]: 
+              - cell [ref=e1488]
+              - cell "Anto 10:40 AM M Varghese" [ref=e1489]:
+                - generic [ref=e1490]: Anto 10:40 AM M Varghese
+              - cell "(Deleted)" [ref=e1491]:
+                - generic [ref=e1492]: (Deleted)
+              - cell "2024-06-02" [ref=e1493]:
+                - generic [ref=e1494]: 2024-06-02
+              - cell [ref=e1495]
+              - cell " " [ref=e1496]:
+                - generic [ref=e1497]:
+                  - button "" [ref=e1498] [cursor=pointer]:
+                    - generic [ref=e1499]: 
+                  - button "" [ref=e1500] [cursor=pointer]:
+                    - generic [ref=e1501]: 
+            - row " Senior QA Lead Murali13s Krishna7d5 Veerfa3 (Deleted) 2024-06-02 Application Initiated   " [ref=e1503]:
+              - cell "" [ref=e1504]:
+                - generic [ref=e1507] [cursor=pointer]:
+                  - checkbox "" [ref=e1508]
+                  - generic [ref=e1510]: 
+              - cell "Senior QA Lead" [ref=e1511]:
+                - generic [ref=e1512]: Senior QA Lead
+              - cell "Murali13s Krishna7d5 Veerfa3" [ref=e1513]:
+                - generic [ref=e1514]: Murali13s Krishna7d5 Veerfa3
+              - cell "(Deleted)" [ref=e1515]:
+                - generic [ref=e1516]: (Deleted)
+              - cell "2024-06-02" [ref=e1517]:
+                - generic [ref=e1518]: 2024-06-02
+              - cell "Application Initiated" [ref=e1519]:
+                - generic [ref=e1520]: Application Initiated
+              - cell "  " [ref=e1521]:
+                - generic [ref=e1522]:
+                  - button "" [ref=e1523] [cursor=pointer]:
+                    - generic [ref=e1524]: 
+                  - button "" [ref=e1525] [cursor=pointer]:
+                    - generic [ref=e1526]: 
+                  - button "" [ref=e1527] [cursor=pointer]:
+                    - generic [ref=e1528]: 
+            - row " Sales Representative Manoj Regmi (Deleted) 2024-05-02 Application Initiated   " [ref=e1530]:
+              - cell "" [ref=e1531]:
+                - generic [ref=e1534] [cursor=pointer]:
+                  - checkbox "" [ref=e1535]
+                  - generic [ref=e1537]: 
+              - cell "Sales Representative" [ref=e1538]:
+                - generic [ref=e1539]: Sales Representative
+              - cell "Manoj Regmi" [ref=e1540]:
+                - generic [ref=e1541]: Manoj Regmi
+              - cell "(Deleted)" [ref=e1542]:
+                - generic [ref=e1543]: (Deleted)
+              - cell "2024-05-02" [ref=e1544]:
+                - generic [ref=e1545]: 2024-05-02
+              - cell "Application Initiated" [ref=e1546]:
+                - generic [ref=e1547]: Application Initiated
+              - cell "  " [ref=e1548]:
+                - generic [ref=e1549]:
+                  - button "" [ref=e1550] [cursor=pointer]:
+                    - generic [ref=e1551]: 
+                  - button "" [ref=e1552] [cursor=pointer]:
+                    - generic [ref=e1553]: 
+                  - button "" [ref=e1554] [cursor=pointer]:
+                    - generic [ref=e1555]: 
+        - navigation "Pagination Navigation" [ref=e1557]:
+          - list [ref=e1558]:
+            - listitem [ref=e1559]:
+              - button "1" [ref=e1560] [cursor=pointer]
+            - listitem [ref=e1561]:
+              - button "2" [ref=e1562] [cursor=pointer]
+            - listitem [ref=e1563]:
+              - button "" [ref=e1564] [cursor=pointer]:
+                - generic [ref=e1565]: 
+    - generic [ref=e1566]:
+      - paragraph [ref=e1567]: OrangeHRM OS 5.8
+      - paragraph [ref=e1568]:
+        - text: © 2005 - 2026
+        - link "OrangeHRM, Inc" [ref=e1569]:
+          - /url: http://www.orangehrm.com
+        - text: . All rights reserved.
+```
+
+# Test source
+
+```ts
+  1  | import { Page } from "@playwright/test";
+  2  | 
+  3  | export class AjouterCandidatpom{
+  4  |     readonly page : Page;
+  5  | 
+  6  |     constructor(p:Page){
+  7  |         this.page = p ;
+  8  | 
+  9  |     }
+  10 | 
+  11 |     // locator
+  12 |     elements={
+  13 |     // btn_Application_stage:()=> this.page.getByRole("heading", { name: "Application Stage" }),
+  14 |     btn_Application_stage:()=> this.page.locator('.oxd-text.oxd-text--h6.orangehrm-main-title'),
+  15 | 
+  16 |     // btn_Candidate_Profile:()=> this.page.getByRole("heading", { name: 'Candidate Profile' }),
+  17 |     // btn_Candidate_Profile:()=> this.page.getByRole(.oxd-text.oxd-text--h6 orangehrm-main-title')),
+  18 | 
+  19 |     btn_recruitment:()=>this.page.getByRole("link", { name: "Recruitment" }),
+  20 |     btn_candidates:()=>this.page.getByRole("link", { name: "Candidates" }),
+  21 |     btn_add:()=> this.page.getByRole("button", { name: "Add" }),
+  22 |     first_name :()=> this.page.getByRole("textbox", { name: "First Name" }),
+  23 |     middle_name :()=> this.page.getByRole("textbox", { name: "Middle Name" }),
+  24 |     last_name :()=> this.page.getByRole("textbox", { name: "Last Name" }),
+  25 |     email:()=> this.page.getByPlaceholder('Type here').nth(1),
+  26 |     btn_save:()=>this.page.getByRole("button", { name: "Save" }) 
+  27 |     }
+  28 | 
+  29 |     async  clickRecruitment(){
+  30 |         await this.elements.btn_recruitment().click();
+  31 | }
+  32 |      async  clickCandidat(){        // a verifier si je dois juste voir le boutton ou cliquer dessus
+> 33 |       await this.elements.btn_candidates().click();
+     |                                            ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  34 | }
+  35 | //         getbtnCandidat(){        // a verifier si je dois juste voir le boutton ou cliquer dessus
+  36 | //         return this.elements.btn_candidates();
+  37 | // }
+  38 |     async  clickAdd(){
+  39 |         await this.elements.btn_add().click();
+  40 | }
+  41 | 
+  42 |     async saisirFirtsNmane(f:string){
+  43 |         await this.elements.first_name().fill(f);   
+  44 |     }
+  45 |     async saisirMiddleNmane(m:string){
+  46 |          await this.elements.middle_name().fill(m);   
+  47 |     }
+  48 |     async saisirLastNmane(l:string){
+  49 |         await this.elements.last_name().fill(l);   
+  50 |     }
+  51 |     async saisirEmail(e:string){
+  52 |         await this.elements.email().fill(e);   
+  53 |     }
+  54 | 
+  55 |     // Nous pouvons egalement transformer c'est methode en une seule qui va s'appeler : infoCandidat
+  56 |     //     async infoCandidat(fname : string , mname : string, lname : string , a_email : string){
+  57 | //         await this.elements.first_name().fill(fname);
+  58 | //         await this.elements.middle_name().fill(mname);
+  59 | //         await this.elements.last_name().fill(lname);
+  60 | //         await this.elements.email().fill(a_email);
+  61 | // }
+  62 | 
+  63 |     async clickSave(){
+  64 |         await this.elements.btn_save().click();
+  65 |     }
+  66 |     getAppStage(){
+  67 |         return this.elements.btn_Application_stage();
+  68 | 
+  69 |     }
+  70 |     // getCandProfile(){
+  71 |     //     return this.elements.btn_Candidate_Profile();
+  72 | 
+  73 |     // }
+  74 | 
+  75 | }
+```
