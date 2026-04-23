@@ -21,7 +21,10 @@ test("connexion identifiant valide",{tag:"@idvalide"},async({page})=>{
     await cp.clickLogin();
     //Then je suis rediriger sur page d'acceuil ayant pour url"https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
     await expect(page).toHaveURL("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index")
+    //And le bouton Upgrade s'affiche
     //  expect(Aj.getUpgrade()).toBeVisible();    le test passe juste sur un site (safarie)
+    
+    // je voulais rajouter une Assertion sur le bouton MyFirstname qui est à coté du boutton Ugrade mais locator est instable.
     //  expect(Aj.getMyFirstname()).toBeVisible();
 
 })

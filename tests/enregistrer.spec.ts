@@ -38,12 +38,12 @@ test("Ajouter candidat",{tag:"@ajouter"},async({page})=>{
 //     await Aj.saisirEmail("test@gmail.com")
 
 //  Appeller la methode infoCandidat pour remplir les champs precédent pour rendre notre code plus court
- await Aj.infoCandidat("Alex","Anis","Test","test@gmail.com");
+ await Aj.infoCandidat("Alex","bruno","Test","test@gmail.com");
 //     And je click sur le bouton Save
     await Aj.clickSave();
 //     Then s'affiche la page  contenant le bouton  Application Stage
     await expect(Aj.getAppStage()).toBeVisible()
-    // En perspective , on va faire l'assertion afin de voir si le bouton candidat profile est visible
+    // En perspective , on va faire l'assertion afin de voir si le bouton "candidat profile" est egalement visible
     // await expect(Aj.getCandProfile()).toBeVisible();
 
 })
